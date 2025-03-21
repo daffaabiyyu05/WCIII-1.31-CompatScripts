@@ -237,10 +237,6 @@ endglobals
 
 native UnitAlive takes unit u returns boolean
 
-function BlzGetEventIsAttack takes nothing returns boolean
-     return BlzGetEventDamageType() == DAMAGE_TYPE_NORMAL
-endfunction
-
 //GUI Vars:
 /*
     Retained from 3.8 and prior:
@@ -1262,7 +1258,7 @@ struct Damage extends array
             */ GetEventDamageSource(), /*
             */ GetTriggerUnit(), /*
             */ GetEventDamage(), /*
-            */ BlzGetEventIsAttack(), /*
+            */ BlzGetEventDamageType() == DAMAGE_TYPE_NORMAL, /*
             */ BlzGetEventAttackType(), /*
             */ BlzGetEventDamageType(), /*
             */ BlzGetEventWeaponType() /*
